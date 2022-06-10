@@ -1,43 +1,28 @@
-import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+/** @jsxImportSource theme-ui */
+/* 上方的註解，讓 sx 屬性生效：https://theme-ui.com/sx-prop */
+import {Flex, Label, Input, Button} from 'theme-ui'
+import MyDialog from "./MyDialog";
+import Dialog from "./Dialog";
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
+      <Flex>
+        <Label htmlFor="search">Search</Label>
+        <Input id="search" name="search"/>
+        <Button>Go</Button>
+      </Flex>
+      <h1
+        sx={{
+          color: 'primary',
+          fontFamily: 'heading',
+        }}>
+        Hello Vite + React!
+      </h1>
+      <Dialog>
+        <MyDialog/>
+      </Dialog>
     </div>
   )
 }
