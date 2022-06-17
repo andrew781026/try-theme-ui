@@ -72,6 +72,7 @@ function MyModal() {
       <MySpan>
         GOOD NIGHT
       </MySpan>
+      <span>What the Hell is Going</span>
       <div css={goods}></div>
     </div>
   )
